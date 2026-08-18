@@ -1,0 +1,12 @@
+tomica-hospital/
+├─ index.html
+├─ schedule.html
+├─ doctors.html
+├─ assets/
+│  ├─ site.css
+│  ├─ departments.js
+│  └─ img/
+│     └─ logo.png
+└─ depts/
+   ├─ index.html
+   └─ dept.html
