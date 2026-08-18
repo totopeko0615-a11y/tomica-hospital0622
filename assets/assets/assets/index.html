@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>トミカ医科大学病院 | 公式サイト</title>
+  <meta name="description" content="外来診察予定表、医師名簿、診療科一覧を掲載するトミカ医科大学病院の公式サイトです。">
+  <link rel="stylesheet" href="./assets/site.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img src="./assets/img/logo.png" alt="トミカ医科大学病院ロゴ">
+        <div>
+          <div class="brand-title">トミカ医科大学病院</div>
+          <div class="brand-sub">TOMICA UNIVERSITY HOSPITAL</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="./index.html">ホーム</a>
+        <a href="./schedule.html">外来診察予定表</a>
+        <a href="./doctors.html">医師名簿</a>
+        <a href="./depts/">診療科一覧</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <h1>診療情報を、わかりやすく。</h1>
+      <p>トミカ医科大学病院の外来診察予定表、医師名簿、診療科情報をまとめた公開用ホームページです。</p>
+      <div class="btns">
+        <a class="btn" href="./schedule.html">外来診察予定表を見る</a>
+        <a class="btn outline" href="./depts/">診療科一覧を見る</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <section>
+      <h2>ご案内</h2>
+      <p class="lead">予約ページは掲載せず、診療案内を中心とした構成にしています。</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>外来診察予定表</h3>
+          <p>曜日ごとの外来体制を確認できます。</p>
+          <a href="./schedule.html">予定表ページへ</a>
+        </div>
+        <div class="card">
+          <h3>医師名簿</h3>
+          <p>医師紹介と名簿をまとめて確認できます。</p>
+          <a href="./doctors.html">医師名簿ページへ</a>
+        </div>
+        <div class="card">
+          <h3>診療科一覧</h3>
+          <p>各診療科の個別ページを用意しています。</p>
+          <a href="./depts/">診療科一覧へ</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>主な診療科</h2>
+      <div class="grid grid-3" id="deptTopList"></div>
+    </section>
+
+    <section>
+      <h2>お知らせ</h2>
+      <div class="info">
+        <p>現在、お知らせはありません。</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>アクセス・連絡先</h2>
+      <div class="info kv">
+        <div><strong>住所</strong> トミカ市未来町1-5</div>
+        <div><strong>電話番号</strong> 022-110-446</div>
+        <div><strong>アクセス</strong> JRトミカ駅から徒歩30分</div>
+        <div><strong>バス</strong> 富良野バスターミナルからトミカ医科大学病院線で30分</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      最終更新: 2026-08-18 ｜ © トミカ医科大学病院
+    </div>
+  </footer>
+
+  <script src="./assets/departments.js"></script>
+  <script>
+    const topList = document.getElementById('deptTopList');
+    topList.innerHTML = window.DEPARTMENTS.slice(0,6).map(d => `
+      <div class="card">
+        <h3>${d.title}</h3>
+        <p>${d.summary}</p>
+        <a href="./depts/dept.html?d=${encodeURIComponent(d.key)}">詳しく見る</a>
+      </div>
+    `).join('');
+  </script>
+</body>
+</html>
